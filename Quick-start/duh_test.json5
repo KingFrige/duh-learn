@@ -1,0 +1,36 @@
+{
+  component: {
+    vendor: 'sifive',
+    library: 'blocks',
+    name: 'duh_test',
+    version: '0.1.0',
+    busInterfaces: [],
+    addressSpaces: [],
+    memoryMaps: [],
+    model: {
+      views: [],
+      ports: {
+        $ref: '#/definitions/ports',
+      },
+    },
+    fileSets: {},
+    pSchema: {},
+  },
+  definitions: {
+    ports: {
+      hclk: 1,
+      hrstn: 1,
+      hsel: 1,
+      hwrite: 1,
+      hreadyin: 1,
+      haddr: 10,
+      hwdata: 32,
+      htrans: 2,
+      hsize: 3,
+      hburst: 3,
+      hreadyout: -1,
+      hresp: -2,
+      hrdata: -32,
+    },
+  },
+}

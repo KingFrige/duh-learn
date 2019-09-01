@@ -1,0 +1,288 @@
+{
+    "component": {
+        "version": "0.1.0",
+        "addressSpaces": [],
+        "fileSets": {},
+        "model": {
+            "views": [],
+            "ports": {
+                "$ref": "#/definitions/ports"
+            }
+        },
+        "name": "duh_test",
+        "memoryMaps": [],
+        "library": "blocks",
+        "vendor": "sifive",
+        "busInterfaceAlts": [
+            {"$ref": "#/definitions/busDefinitions/busint-portgroup_0-mapping_1-prefix_h-slave-SPRAM_rtl"},
+            {"$ref": "#/definitions/busDefinitions/busint-portgroup_0-mapping_2-prefix_h-slave-AXI4Stream_rtl"},
+            {"$ref": "#/definitions/busDefinitions/busint-portgroup_0-mapping_3-prefix_h-slave-APB4_rtl"},
+            {"$ref": "#/definitions/busDefinitions/busint-portgroup_0-mapping_4-prefix_h-slave-DPRAM_rtl"},
+            {"$ref": "#/definitions/busDefinitions/busint-portgroup_0-mapping_5-prefix_h-master-AXI4Stream_rtl"},
+            {"$ref": "#/definitions/busDefinitions/busint-portgroup_0-mapping_6-prefix_h-master-AHBLite_rtl"}
+        ],
+        "pSchema": {},
+        "busInterfaces": [
+            {"$ref": "#/definitions/busDefinitions/busint-portgroup_0-mapping_0-prefix_h-slave-AHBLite_rtl"}
+        ]
+    },
+    "definitions": {
+        "busDefinitions": {
+            "busint-portgroup_0-mapping_1-prefix_h-slave-SPRAM_rtl": {
+                "abstractionTypes": [
+                    {
+                        "viewRef": "RTLview",
+                        "portMaps": {
+                            "RDDATA": "hrdata",
+                            "BEN": "hsel",
+                            "ADDR": "haddr",
+                            "__UMAP__": [
+                                "hburst",
+                                "htrans",
+                                "hsize",
+                                "hrstn",
+                                "hresp",
+                                "hreadyout"
+                            ],
+                            "WREN": "hwrite",
+                            "RDEN": "hreadyin",
+                            "WRDATA": "hwdata",
+                            "CLK": "hclk"
+                        }
+                    }
+                ],
+                "busType": {
+                    "library": "MEM",
+                    "version": "0.1.0",
+                    "name": "SPRAM",
+                    "vendor": "sifive.com"
+                },
+                "interfaceMode": "slave",
+                "name": "h"
+            },
+            "busint-portgroup_0-mapping_2-prefix_h-slave-AXI4Stream_rtl": {
+                "abstractionTypes": [
+                    {
+                        "viewRef": "RTLview",
+                        "portMaps": {
+                            "TUSER": [
+                                "hrstn",
+                                "hreadyin",
+                                "hwrite"
+                            ],
+                            "ACLK": "hclk",
+                            "TDEST": "hsize",
+                            "TREADY": "hreadyout",
+                            "TLAST": "hsel",
+                            "__UMAP__": [
+                                "hresp",
+                                "hrdata"
+                            ],
+                            "TKEEP": "htrans",
+                            "TID": "haddr",
+                            "TDATA": "hwdata",
+                            "TSTRB": "hburst"
+                        }
+                    }
+                ],
+                "busType": {
+                    "library": "AMBA4",
+                    "version": "r0p0_1",
+                    "name": "AXI4Stream",
+                    "vendor": "amba.com"
+                },
+                "interfaceMode": "slave",
+                "name": "h"
+            },
+            "busint-portgroup_0-mapping_0-prefix_h-slave-AHBLite_rtl": {
+                "abstractionTypes": [
+                    {
+                        "viewRef": "RTLview",
+                        "portMaps": {
+                            "HRESP": "hresp",
+                            "HWRITE": "hwrite",
+                            "HBURST": "hburst",
+                            "HCLK": "hclk",
+                            "HREADY": "hreadyin",
+                            "HRDATA": "hrdata",
+                            "HADDR": "haddr",
+                            "HWDATA": "hwdata",
+                            "__UMAP__": [
+                                "hsel",
+                                "hrstn"
+                            ],
+                            "HTRANS": "htrans",
+                            "HSIZE": "hsize",
+                            "HREADYOUT": "hreadyout"
+                        }
+                    }
+                ],
+                "busType": {
+                    "library": "AMBA3",
+                    "version": "r2p0_0",
+                    "name": "AHBLite",
+                    "vendor": "amba.com"
+                },
+                "interfaceMode": "slave",
+                "name": "h"
+            },
+            "busint-portgroup_0-mapping_4-prefix_h-slave-DPRAM_rtl": {
+                "abstractionTypes": [
+                    {
+                        "viewRef": "RTLview",
+                        "portMaps": {
+                            "RDDATA": "hrdata",
+                            "BEN": "hsel",
+                            "WRCLK": "hclk",
+                            "RDADDR": "haddr",
+                            "__UMAP__": [
+                                "htrans",
+                                "hrstn",
+                                "hburst",
+                                "hsize",
+                                "hresp",
+                                "hreadyout"
+                            ],
+                            "WREN": "hwrite",
+                            "RDEN": "hreadyin",
+                            "WRDATA": "hwdata"
+                        }
+                    }
+                ],
+                "busType": {
+                    "library": "MEM",
+                    "version": "0.1.0",
+                    "name": "DPRAM",
+                    "vendor": "sifive.com"
+                },
+                "interfaceMode": "slave",
+                "name": "h"
+            },
+            "busint-portgroup_0-mapping_3-prefix_h-slave-APB4_rtl": {
+                "abstractionTypes": [
+                    {
+                        "viewRef": "RTLview",
+                        "portMaps": {
+                            "PWDATA": "hwdata",
+                            "PCLK": "hclk",
+                            "__UMAP__": [
+                                "hreadyin",
+                                "hburst",
+                                "hsize",
+                                "hrstn",
+                                "htrans",
+                                "hresp"
+                            ],
+                            "PADDR": "haddr",
+                            "PREADY": "hreadyout",
+                            "PSELx": "hsel",
+                            "PWRITE": "hwrite",
+                            "PRDATA": "hrdata"
+                        }
+                    }
+                ],
+                "busType": {
+                    "library": "AMBA4",
+                    "version": "r0p0_0",
+                    "name": "APB4",
+                    "vendor": "amba.com"
+                },
+                "interfaceMode": "slave",
+                "name": "h"
+            },
+            "busint-portgroup_0-mapping_5-prefix_h-master-AXI4Stream_rtl": {
+                "abstractionTypes": [
+                    {
+                        "viewRef": "RTLview",
+                        "portMaps": {
+                            "TUSER": [
+                                "hreadyout"
+                            ],
+                            "ACLK": "hclk",
+                            "TDEST": "hresp",
+                            "TREADY": "hreadyin",
+                            "TLAST": "hsel",
+                            "__UMAP__": [
+                                "hsize",
+                                "hrstn",
+                                "htrans",
+                                "haddr",
+                                "hwrite"
+                            ],
+                            "TID": "hwdata",
+                            "TDATA": "hrdata",
+                            "TSTRB": "hburst"
+                        }
+                    }
+                ],
+                "busType": {
+                    "library": "AMBA4",
+                    "version": "r0p0_1",
+                    "name": "AXI4Stream",
+                    "vendor": "amba.com"
+                },
+                "interfaceMode": "master",
+                "name": "h"
+            },
+            "busint-portgroup_0-mapping_6-prefix_h-master-AHBLite_rtl": {
+                "abstractionTypes": [
+                    {
+                        "viewRef": "RTLview",
+                        "portMaps": {
+                            "HREADY": "hreadyin",
+                            "HWDATA": "hrdata",
+                            "HCLK": "hclk",
+                            "__UMAP__": [
+                                "hreadyout",
+                                "hburst",
+                                "hsel",
+                                "hrstn",
+                                "hresp",
+                                "hwrite"
+                            ],
+                            "HTRANS": "htrans",
+                            "HSIZE": "hsize",
+                            "HADDR": "haddr",
+                            "HRDATA": "hwdata"
+                        }
+                    }
+                ],
+                "busType": {
+                    "library": "AMBA3",
+                    "version": "r2p0_0",
+                    "name": "AHBLite",
+                    "vendor": "amba.com"
+                },
+                "interfaceMode": "master",
+                "name": "h"
+            }
+        },
+        "busMappedPortGroups": [
+            [
+                "portgroup_0",
+                [
+                    ["num_ports", 13],
+                    ["prefix", "h"],
+                    ["num-direction-mismatch", 3],
+                    ["num-width-mismatch", 4]
+                ]
+            ]
+        ],
+        "pg_cnt": 1,
+        "ports": {
+            "hburst": 3,
+            "hwrite": 1,
+            "htrans": 2,
+            "haddr": 10,
+            "hsize": 3,
+            "hreadyin": 1,
+            "hreadyout": -1,
+            "hwdata": 32,
+            "hclk": 1,
+            "hrstn": 1,
+            "hsel": 1,
+            "hrdata": -32,
+            "hresp": -2
+        }
+    }
+}
